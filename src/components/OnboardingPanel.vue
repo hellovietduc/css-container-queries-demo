@@ -6,7 +6,7 @@ const width = ref(400);
 
 <template>
   <div
-    class="flex justify-center items-center h-screen rounded-s-2xl bg-slate-100"
+    class="shrink-0 flex justify-center items-center h-screen rounded-s-2xl bg-slate-100"
     :style="{ width: `${width}px` }"
   >
     <div class="flex gap-3">
