@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { onClickOutside, useDocumentVisibility, useEventListener, useMouse } from '@vueuse/core';
-import { ref, watch } from 'vue';
+import { useEventListener, useMouse } from '@vueuse/core';
+import { ref } from 'vue';
 
 const width = ref(400);
 const dragHandle = ref<HTMLElement>();
@@ -8,10 +8,10 @@ const dragHandle = ref<HTMLElement>();
 const startX = ref(0);
 const startWidth = ref(0);
 const isResizing = ref(false);
-
 const { x: mouseX } = useMouse();
 
 const startResize = () => {
+  if (isResizing.value) return
   startX.value = mouseX.value;
   startWidth.value = width.value;
   isResizing.value = true;
@@ -27,14 +27,7 @@ const stopResize = () => {
 };
 
 useEventListener('mousemove', resize);
-onClickOutside(dragHandle, stopResize)
-
-const documentVisibility = useDocumentVisibility();
-watch(documentVisibility, (current, previous) => {
-  if (current === 'visible' && previous === 'hidden') {
-    stopResize();
-  }
-});
+useEventListener('mouseup', stopResize)
 </script>
 
 <template>
