@@ -16,7 +16,7 @@ withDefaults(
 </script>
 
 <template>
-  <div class="relative flex w-screen gap-0.5">
+  <div class="flex w-screen gap-0.5">
     <SurfaceContainerMediaQueries v-if="mode === 'media-queries'" />
     <SurfaceContainerContainerQueries v-if="mode === 'container-queries'" :x-content-picker="xContentPicker" />
     <OnboardingPanel />

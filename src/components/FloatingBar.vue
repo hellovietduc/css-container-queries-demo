@@ -9,8 +9,8 @@ const breakpoint = computed(() => widthToBreakpoint(width.value))
 </script>
 
 <template>
-  <div class="absolute bottom-4 start-0 end-0 flex justify-center">
-    <p class="grow-0 bg-slate-100 px-4 py-2 rounded-2xl">
+  <div class="fixed bottom-4 start-0 end-0 flex justify-center">
+    <p class="grow-0 bg-teal-700 text-white px-4 py-2 rounded-2xl">
       {{ width }}px - {{ breakpoint }}
     </p>
   </div>
