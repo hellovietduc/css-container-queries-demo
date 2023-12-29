@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useEventListener, useMouse } from '@vueuse/core';
-import { ref } from 'vue';
+import { useDocumentVisibility, useEventListener, useMouse } from '@vueuse/core';
+import { ref, watch } from 'vue';
 
 const width = ref(400);
 
@@ -26,6 +26,13 @@ const stopResize = () => {
 };
 
 useEventListener('mousemove', resize);
+
+const documentVisibility = useDocumentVisibility();
+watch(documentVisibility, (current, previous) => {
+  if (current === 'visible' && previous === 'hidden') {
+    stopResize();
+  }
+});
 </script>
 
 <template>
