@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { useDocumentVisibility, useEventListener, useMouse } from '@vueuse/core';
+import { onClickOutside, useDocumentVisibility, useEventListener, useMouse } from '@vueuse/core';
 import { ref, watch } from 'vue';
 
 const width = ref(400);
+const dragHandle = ref<HTMLElement>();
 
 const startX = ref(0);
 const startWidth = ref(0);
@@ -26,6 +27,7 @@ const stopResize = () => {
 };
 
 useEventListener('mousemove', resize);
+onClickOutside(dragHandle, stopResize)
 
 const documentVisibility = useDocumentVisibility();
 watch(documentVisibility, (current, previous) => {
@@ -42,6 +44,7 @@ watch(documentVisibility, (current, previous) => {
   >
     <p>{{ width }}px</p>
     <button
+      ref="dragHandle"
       class="absolute -start-2.5 h-10 w-5 p-1 rounded bg-slate-600 cursor-col-resize"
       @mousedown="startResize"
       @mouseup="stopResize"
