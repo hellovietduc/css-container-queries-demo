@@ -26,7 +26,7 @@ const breakpoint = computed(() => widthToBreakpoint(wishListWidth.value))
       </h1>
       <p class="text-center">{{ wishListWidth }}px - {{ breakpoint }}</p>
     </header>
-    <div ref="wishList" class="grow self-center flex flex-wrap gap-4 p-4 overflow-hidden">
+    <div ref="wishList" class="self-center flex flex-wrap gap-4 p-4 overflow-hidden">
       <Post v-for="i in 5" :key="i" class="w-[calc(50%-0.5rem)] tablet-portrait:w-[calc(25%-0.75rem)] desktop:max-w-64" />
     </div>
   </div>
