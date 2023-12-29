@@ -4,15 +4,21 @@ import OnboardingPanel from './OnboardingPanel.vue';
 import SurfaceContainerContainerQueries from './SurfaceContainerContainerQueries.vue';
 import SurfaceContainerMediaQueries from './SurfaceContainerMediaQueries.vue';
 
-defineProps<{
-  mode: 'media-queries' | 'container-queries';
-}>()
+withDefaults(
+  defineProps<{
+    mode: 'media-queries' | 'container-queries';
+    xContentPicker?: boolean;
+  }>(),
+  {
+    xContentPicker: false,
+  }
+);
 </script>
 
 <template>
   <div class="relative flex w-screen gap-0.5">
     <SurfaceContainerMediaQueries v-if="mode === 'media-queries'" />
-    <SurfaceContainerContainerQueries v-if="mode === 'container-queries'" />
+    <SurfaceContainerContainerQueries v-if="mode === 'container-queries'" :x-content-picker="xContentPicker" />
     <OnboardingPanel />
     <FloatingBar />
   </div>
