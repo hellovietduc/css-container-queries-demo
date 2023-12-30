@@ -2,7 +2,7 @@
 import ContentPicker from './ContentPicker.vue';
 import ContentPickerFallback from './ContentPickerFallback.vue';
 import DashboardSettingsSkeleton from './DashboardSettingsSkeleton.vue';
-import FloatingBar from './FloatingBar.vue';
+import SizeBar from './SizeBar.vue';
 
 withDefaults(
   defineProps<{
@@ -19,7 +19,7 @@ withDefaults(
 <template>
   <div class="w-screen h-screen bg-slate-100">
     <DashboardSettingsSkeleton />
-    <FloatingBar />
+    <SizeBar />
     <ContentPicker v-if="xContentPicker" />
     <ContentPickerFallback v-if="xContentPickerFallback" />
   </div>

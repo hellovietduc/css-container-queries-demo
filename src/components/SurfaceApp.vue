@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import FloatingBar from './FloatingBar.vue';
 import OnboardingPanel from './OnboardingPanel.vue';
+import SizeBar from './SizeBar.vue';
 import SurfaceContainerContainerQueries from './SurfaceContainerContainerQueries.vue';
 import SurfaceContainerMediaQueries from './SurfaceContainerMediaQueries.vue';
 
@@ -20,6 +20,6 @@ withDefaults(
     <SurfaceContainerMediaQueries v-if="mode === 'media-queries'" />
     <SurfaceContainerContainerQueries v-if="mode === 'container-queries'" :x-content-picker="xContentPicker" />
     <OnboardingPanel />
-    <FloatingBar />
+    <SizeBar />
   </div>
 </template>
