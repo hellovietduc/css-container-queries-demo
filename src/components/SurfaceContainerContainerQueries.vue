@@ -31,7 +31,7 @@ const breakpoint = computed(() => widthToBreakpoint(containerWidth.value));
 <template>
   <div
     ref="container"
-    class="grow relative flex flex-col h-screen rounded-e-2xl bg-rose-200 @container"
+    class="grow relative flex flex-col h-screen rounded-e-2xl bg-rose-200 @container/surface-container"
   >
     <header class="mt-4 mx-4">
       <h1 class="text-xl font-bold">CSS container queries demo</h1>
@@ -41,7 +41,7 @@ const breakpoint = computed(() => widthToBreakpoint(containerWidth.value));
       <Post
         v-for="i in 5"
         :key="i"
-        class="w-[calc(50%-0.5rem)] @tablet-portrait:w-[calc(25%-0.75rem)] @desktop:max-w-64"
+        class="w-[calc(50%-0.5rem)] @tablet-portrait/surface-container:w-[calc(25%-0.75rem)] @desktop/surface-container:max-w-64"
       />
     </div>
     <ContentPicker v-if="xContentPicker" />
