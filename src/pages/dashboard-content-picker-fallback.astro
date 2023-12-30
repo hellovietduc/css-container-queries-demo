@@ -1,0 +1,8 @@
+---
+import DashboardApp from '../components/DashboardApp.vue';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Surface">
+  <DashboardApp xContentPickerFallback={true} client:only="vue" />
+</Layout>

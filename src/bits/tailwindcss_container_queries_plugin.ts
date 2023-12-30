@@ -20,7 +20,7 @@ const parseValue = (value: string): number | null => {
   const numericValue = value.match(/^(\d+\.\d+|\d+|\.\d+)\D+/)?.[1] ?? null;
   if (numericValue === null) return null;
   return parseFloat(value);
-};
+}
 
 const sort: (
   a: { value: string; modifier: string | null },
