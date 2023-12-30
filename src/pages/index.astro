@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="CSS container queries demo index">
+  <header class="mt-4 mx-4">
+    <h1 class="text-xl font-bold">CSS container queries demo index</h1>
+  </header>
+  <div class="p-4">
+    <a href="/surface-media-queries"> 1. Media queries on Surface</a>
+    <a href="/surface-container-queries"> 2. Container queries on Surface</a>
+    <a href="/surface-content-picker">
+      3. Content picker component on Surface
+    </a>
+    <a href="/dashboard-content-picker">
+      4. Reuse content picker component on Dashboard
+    </a>
+    <a href="/dashboard-content-picker-fallback">
+      5. Fix content picker component on Dashboard by using media queries as
+      fallbacks
+    </a>
+  </div>
+</Layout>
+
+<style>
+  html {
+    @apply bg-slate-100;
+  }
+
+  a {
+    @apply block;
+  }
+
+  a:hover {
+    @apply underline;
+  }
+</style>
