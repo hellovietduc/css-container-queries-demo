@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import ContentPicker from './ContentPicker.vue';
 import ContentPickerFallback from './ContentPickerFallback.vue';
+import DashboardSettingsSkeleton from './DashboardSettingsSkeleton.vue';
 import FloatingBar from './FloatingBar.vue';
 
 withDefaults(
@@ -17,6 +18,7 @@ withDefaults(
 
 <template>
   <div class="w-screen h-screen bg-slate-100">
+    <DashboardSettingsSkeleton />
     <FloatingBar />
     <ContentPicker v-if="xContentPicker" />
     <ContentPickerFallback v-if="xContentPickerFallback" />
