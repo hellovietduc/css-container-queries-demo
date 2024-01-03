@@ -7,6 +7,7 @@ import Post from './Post.vue';
 
 withDefaults(
   defineProps<{
+    subtitle: string
     xContentPicker?: boolean;
   }>(),
   {
@@ -35,6 +36,9 @@ const breakpoint = computed(() => widthToBreakpoint(containerWidth.value));
   >
     <header class="mt-4 mx-4">
       <h1 class="text-xl font-bold">CSS container queries demo</h1>
+      <h2 class="mb-4">
+        {{ subtitle }}
+      </h2>
       <p class="text-center">{{ containerWidth }}px - {{ breakpoint }}</p>
     </header>
     <div class="self-center flex flex-wrap gap-4 p-4 overflow-hidden">
