@@ -43,9 +43,9 @@ const breakpoint = computed(() => widthToBreakpoint(containerWidth.value));
     </header>
     <div class="self-center flex flex-wrap gap-4 p-4 overflow-hidden">
       <Post
-        v-for="i in 5"
+        v-for="i in 7"
         :key="i"
-        class="w-[calc(50%-0.5rem)] @tablet-portrait/surface-container:w-[calc(25%-0.75rem)] @desktop/surface-container:max-w-64"
+        class="w-[calc(50%-0.5rem)] @tablet-portrait/surface-container:w-[calc(33%-1rem)] @tablet-landscape/surface-container:w-[calc(25%-0.75rem)] @desktop/surface-container:max-w-64"
       />
     </div>
     <ContentPicker v-if="xContentPicker" />

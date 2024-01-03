@@ -34,7 +34,7 @@ const breakpoint = computed(() => widthToBreakpoint(containerWidth.value))
       <p class="text-center">{{ containerWidth }}px - {{ breakpoint }}</p>
     </header>
     <div class="self-center flex flex-wrap gap-4 p-4 overflow-hidden">
-      <Post v-for="i in 5" :key="i" class="w-[calc(50%-0.5rem)] tablet-portrait:w-[calc(25%-0.75rem)] desktop:max-w-64" />
+      <Post v-for="i in 7" :key="i" class="w-[calc(50%-0.5rem)] tablet-portrait:w-[calc(33%-1rem)] tablet-landscape:w-[calc(25%-0.75rem)] desktop:max-w-64" />
     </div>
   </div>
 </template>
