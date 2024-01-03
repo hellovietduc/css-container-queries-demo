@@ -130,7 +130,6 @@ export default plugin(
      * @example hhover:-@:m-0
      */
     addVariant('-@', ({ container }: { container: Container }) => {
-      const newRule = postcss.rule({ selector: '' });
       const clonedContainer = container.clone();
       clonedContainer.walkRules((rule: { selector: string }) => {
         // Reconstruct the original selector
@@ -141,9 +140,7 @@ export default plugin(
         // the `@container` utility class
         rule.selector = `&:not([class*="@container"] .${selector})`;
       });
-      newRule.append(clonedContainer.nodes);
-      container.removeAll();
-      container.append(newRule);
+      container.replaceWith(...clonedContainer.nodes);
     });
   },
   {
