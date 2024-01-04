@@ -3,6 +3,7 @@ import { useResizeObserver } from '@vueuse/core';
 import { computed, onMounted, ref } from 'vue';
 import { widthToBreakpoint } from '../bits/breakpoints';
 import Post from './Post.vue';
+import SurfaceHeader from './SurfaceHeader.vue';
 
 defineProps<{
   subtitle: string;
@@ -27,13 +28,7 @@ const breakpoint = computed(() => widthToBreakpoint(containerWidth.value));
     ref="container"
     class="grow flex flex-col h-screen rounded-e-2xl bg-blue-200"
   >
-    <header class="mt-4 mx-4">
-      <h1 class="text-xl font-bold">CSS container queries demo</h1>
-      <h2 class="mb-4">
-        {{ subtitle }}
-      </h2>
-      <p class="text-center">{{ containerWidth }}px - {{ breakpoint }}</p>
-    </header>
+    <SurfaceHeader :subtitle="subtitle" :container-width="containerWidth" :breakpoint="breakpoint" />
     <div class="self-center flex flex-wrap gap-4 p-4 overflow-hidden">
       <Post
         v-for="i in 7"

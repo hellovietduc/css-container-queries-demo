@@ -4,6 +4,7 @@ import { computed, onMounted, ref } from 'vue';
 import { widthToBreakpoint } from '../bits/breakpoints';
 import ContentPicker from './ContentPicker.vue';
 import Post from './Post.vue';
+import SurfaceHeader from './SurfaceHeader.vue';
 
 withDefaults(
   defineProps<{
@@ -34,13 +35,7 @@ const breakpoint = computed(() => widthToBreakpoint(containerWidth.value));
     ref="container"
     class="grow relative flex flex-col h-screen rounded-e-2xl bg-rose-200 @container/surface-container"
   >
-    <header class="mt-4 mx-4">
-      <h1 class="text-xl font-bold">CSS container queries demo</h1>
-      <h2 class="mb-4">
-        {{ subtitle }}
-      </h2>
-      <p class="text-center">{{ containerWidth }}px - {{ breakpoint }}</p>
-    </header>
+    <SurfaceHeader :subtitle="subtitle" :container-width="containerWidth" :breakpoint="breakpoint" />
     <div class="self-center flex flex-wrap gap-4 p-4 overflow-hidden">
       <Post
         v-for="i in 7"
