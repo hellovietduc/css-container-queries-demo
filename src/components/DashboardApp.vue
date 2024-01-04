@@ -19,8 +19,8 @@ withDefaults(
 <template>
   <div class="w-screen h-screen bg-slate-100">
     <DashboardSettingsSkeleton />
-    <SizeBar />
     <ContentPicker v-if="xContentPicker" />
     <ContentPickerFallback v-if="xContentPickerFallback" />
+    <SizeBar />
   </div>
 </template>
