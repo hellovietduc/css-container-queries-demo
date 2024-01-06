@@ -57,7 +57,6 @@ export default plugin(
     addVariant,
     theme,
     e,
-    postcss,
   }: CustomPluginAPI) {
     const values: Record<string, string> = theme('containers') ?? {};
 
