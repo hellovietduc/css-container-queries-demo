@@ -38,7 +38,7 @@ useEventListener('mouseup', stopResize)
     <p>{{ width }}px</p>
     <button
       ref="dragHandle"
-      class="absolute -start-2.5 h-10 w-5 p-1 rounded bg-slate-600 cursor-col-resize"
+      class="absolute -start-2.5 h-10 w-5 p-1 outline-none rounded bg-slate-600 cursor-col-resize"
       @mousedown="startResize"
       @mouseup="stopResize"
     ></button>

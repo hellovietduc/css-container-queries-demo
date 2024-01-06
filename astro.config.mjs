@@ -9,4 +9,7 @@ export default defineConfig({
   build: {
     inlineStylesheets: 'always',
   },
+  prefetch: {
+    defaultStrategy: 'viewport',
+  },
 });
